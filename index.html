@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMBHAV DHITAL | KAKAROT | Legendary Cinematic Visionary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;700;900&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&family=Gothic+A1:wght@300;400;700;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* RESET & BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --theme-color: #8a0303;
+            --theme-dark: #0a0a0a;
+            --theme-light: #1a1a1a;
+            --theme-accent: #b30000;
+            --theme-font: 'Rajdhani', sans-serif;
+            --theme-font-alt: 'Cinzel', serif;
+            --theme-bg-image: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=1867&q=80');
+            --theme-text-shadow: 0 0 15px rgba(138, 3, 3, 0.9);
+            --theme-box-shadow: 0 0 40px rgba(138, 3, 3, 0.5);
+            --theme-transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            --theme-glow: radial-gradient(circle, rgba(138,3,3,0.3) 0%, transparent 70%);
+        }
+
+        body {
+            font-family: var(--theme-font);
+            background-color: var(--theme-dark);
+            color: #f0f0f0;
+            line-height: 1.8;
+            overflow-x: hidden;
+            transition: var(--theme-transition);
+            min-height: 100vh;
+            position: relative;
+            cursor: default;
+        }
+
+        /* BACKGROUND ELEMENTS */
+        .theme-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--theme-bg-image);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -3;
+            transition: var(--theme-transition);
+        }
+
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .kakarot-particle {
+            position: absolute;
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: rgba(138, 3, 3, 0.1);
+            font-size: 20px;
+            animation: floatParticle 20s linear infinite;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .scan-line {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--theme-color), transparent);
+            z-index: -1;
+            opacity: 0;
+            animation: scan 4s linear infinite;
+            box-shadow: 0 0 20px var(--theme-color);
+        }
+
+        @keyframes scan {
+            0% {
+                top: 0;
+                opacity: 0;
+            }
+            5% {
+                opacity: 1;
+            }
+            95% {
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        .code-matrix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+            opacity: 0.1;
+            font-family: 'Courier New', monospace;
+            color: var(--theme-color);
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        .matrix-char {
+            position: absolute;
+            animation: matrixFall linear infinite;
+        }
+
+        @keyframes matrixFall {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* DRAMATIC TYPOGRAPHY */
+        h1, h2, h3, h4 {
+            font-family: var(--theme-font-alt);
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* THEME CONTROL PANEL */
+        .theme-control-panel {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: rgba(10, 10, 10, 0.9);
+            padding: 25px 15px;
+            border-radius: 20px;
+            border: 2px solid rgba(138, 3, 3, 0.3);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .theme-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(20, 20, 20, 0.9);
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: var(--theme-color);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+            opacity: 0.3;
+        }
+
+        .theme-btn:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.15) rotate(10deg);
+            border-color: var(--theme-color);
+            box-shadow: 0 0 30px var(--theme-color);
+        }
+
+        .theme-btn.active {
+            border-color: var(--theme-color);
+            box-shadow: 0 0 40px var(--theme-color);
+            transform: scale(1.1);
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 30px var(--theme-color); }
+            50% { box-shadow: 0 0 60px var(--theme-color); }
+        }
+
+        .theme-label {
+            position: absolute;
+            right: 80px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 8px 15px;
+            border-radius: 10px;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.3s;
+            pointer-events: none;
+            border: 1px solid var(--theme-color);
+            font-size: 0.9rem;
+        }
+
+        .theme-btn:hover .theme-label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* CONTROL PANEL */
+        .control-panel {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            display: flex;
+            gap: 20px;
+            background: rgba(10, 10, 10, 0.9);
+            padding: 20px;
+            border-radius: 20px;
+            border: 2px solid rgba(138, 3, 3, 0.3);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .control-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid var(--theme-color);
+            background: rgba(20, 20, 20, 0.9);
+            color: var(--theme-color);
+            font-size: 1.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .control-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(138, 3, 3, 0.2), transparent);
+            transition: left 0.7s;
+        }
+
+        .control-btn:hover::after {
+            left: 100%;
+        }
+
+        .control-btn:hover {
+            transform: scale(1.1);
+            background: var(--theme-color);
+            color: #000;
+            box-shadow: 0 0 30px var(--theme-color);
+        }
+
+        .control-label {
+            position: absolute;
+            left: 80px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 8px 15px;
+            border-radius: 10px;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.3s;
+            pointer-events: none;
+            border: 1px solid var(--theme-color);
+            font-size: 0.9rem;
+        }
+
+        .control-btn:hover .control-label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* NAVIGATION */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 999;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.95), rgba(10,10,10,0.8));
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid rgba(138, 3, 3, 0.2);
+            transition: var(--theme-transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-logo-icon {
+            font-size: 3rem;
+            color: var(--theme-color);
+            text-shadow: 0 0 25px var(--theme-color);
+            animation: logoSpin 20s linear infinite;
+        }
+
+        @keyframes logoSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .nav-logo-text {
+            font-family: var(--theme-font-alt);
+            font-size: 2.2rem;
+            color: #fff;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px var(--theme-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-link {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            padding: 10px 0;
+            position: relative;
+            transition: all 0.4s;
+        }
+
+        .nav-link::before,
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--theme-color);
+            transition: width 0.4s;
+        }
+
+        .nav-link::before {
+            top: 0;
+            left: 0;
+        }
+
+        .nav-link::after {
+            bottom: 0;
+            right: 0;
+        }
+
+        .nav-link:hover::before,
+        .nav-link:hover::after,
+        .nav-link.active::before,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--theme-color);
+            text-shadow: 0 0 15px var(--theme-color);
+        }
+
+        .nav-indicator {
+            position: absolute;
+            bottom: -5px;
+            height: 3px;
+            background: var(--theme-color);
+            transition: left 0.4s, width 0.4s;
+            box-shadow: 0 0 10px var(--theme-color);
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text {
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 5.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: 6px;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .hero-subtitle {
+            font-size: 2.5rem;
+            color: var(--theme-color);
+            margin-bottom: 30px;
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px var(--theme-color);
+            font-weight: 700;
+        }
+
+        .hero-description {
+            font-size: 1.8rem;
+            color: #cccccc;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+            font-weight: 300;
+            border-left: 4px solid var(--theme-color);
+            padding-left: 25px;
+        }
+
+        .hero-quote {
+            font-size: 1.5rem;
+            color: var(--theme-color);
+            font-style: italic;
+            margin-top: 30px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(138, 3, 3, 0.7);
+            position: relative;
+            padding: 20px;
+            border: 1px solid rgba(138, 3, 3, 0.3);
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+        }
+
+        .hero-image-container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-image-placeholder {
+            width: 500px;
+            height: 600px;
+            border: 5px solid rgba(138, 3, 3, 0.3);
+            border-radius: 20px;
+            background: rgba(20, 20, 20, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            box-shadow: 0 0 60px rgba(138, 3, 3, 0.5);
+            transition: var(--theme-transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--theme-color), transparent, var(--theme-color));
+            z-index: -1;
+            filter: blur(20px);
+            opacity: 0.5;
+        }
+
+        .profile-image-placeholder:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 80px rgba(138, 3, 3, 0.7);
+        }
+
+        .image-icon {
+            font-size: 10rem;
+            color: rgba(138, 3, 3, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .image-upload-text {
+            font-size: 1.5rem;
+            color: #aaa;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .image-upload-btn {
+            padding: 15px 30px;
+            background: rgba(138, 3, 3, 0.3);
+            border: 2px solid var(--theme-color);
+            color: #fff;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .image-upload-btn:hover {
+            background: var(--theme-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(138, 3, 3, 0.5);
+        }
+
+        #profileImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            display: none;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 180px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-size: 4.5rem;
+            text-align: center;
+            margin-bottom: 100px;
+            color: var(--theme-color);
+            position: relative;
+            padding-bottom: 30px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--theme-color), transparent);
+            box-shadow: 0 0 20px var(--theme-color);
+        }
+
+        /* ABOUT SECTION */
+        .about-section {
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8), transparent);
+            border-top: 1px solid rgba(138, 3, 3, 0.1);
+            border-bottom: 1px solid rgba(138, 3, 3, 0.1);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 60px;
+        }
+
+        .about-card {
+            background: linear-gradient(145deg, rgba(20,20,20,0.9), rgba(10,10,10,0.9));
+            padding: 50px 40px;
+            border-radius: 15px;
+            box-shadow: var(--theme-box-shadow), inset 0 0 30px rgba(0,0,0,0.5);
+            transition: var(--theme-transition);
+            border: 1px solid rgba(138, 3, 3, 0.2);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--theme-color), transparent, var(--theme-color));
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.6s;
+        }
+
+        .about-card:hover::before {
+            opacity: 1;
+        }
+
+        .about-card:hover {
+            transform: translateY(-20px) rotateX(5deg);
+            box-shadow: 0 30px 60px rgba(138, 3, 3, 0.6);
+        }
+
+        .about-icon {
+            font-size: 5rem;
+            color: var(--theme-color);
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 0 0 30px var(--theme-color);
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .about-card h3 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .about-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: var(--theme-color);
+        }
+
+        /* SKILLS SECTION */
+        .skills-section {
+            position: relative;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.9), transparent);
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+        }
+
+        .skill-category {
+            background: linear-gradient(145deg, rgba(15,15,15,0.95), rgba(5,5,5,0.95));
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(138, 3, 3, 0.3);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--theme-color), transparent);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--theme-color);
+            text-shadow: 0 0 20px var(--theme-color);
+        }
+
+        .skill-title {
+            font-size: 2.2rem;
+            color: #fff;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-item {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .skill-item:last-child {
+            border-bottom: none;
+        }
+
+        .skill-item i {
+            color: var(--theme-color);
+            font-size: 1.2rem;
+        }
+
+        /* PORTFOLIO SECTION */
+        .portfolio-section {
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.95), transparent);
+        }
+
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-filter-btn {
+            padding: 12px 30px;
+            background: rgba(20, 20, 20, 0.8);
+            border: 2px solid rgba(138, 3, 3, 0.3);
+            color: #ccc;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .portfolio-filter-btn:hover,
+        .portfolio-filter-btn.active {
+            background: var(--theme-color);
+            color: #000;
+            border-color: var(--theme-color);
+            box-shadow: 0 0 25px var(--theme-color);
+            transform: translateY(-5px);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: var(--theme-transition);
+            border: 2px solid rgba(138, 3, 3, 0.1);
+            transform-style: preserve-3d;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-20px) scale(1.03);
+            border-color: var(--theme-color);
+            box-shadow: 0 30px 60px rgba(138, 3, 3, 0.5);
+            z-index: 10;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s;
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            opacity: 0;
+            transition: opacity 0.6s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #fff;
+            transform: translateY(20px);
+            transition: transform 0.6s;
+        }
+
+        .portfolio-item:hover .portfolio-title {
+            transform: translateY(0);
+        }
+
+        .portfolio-description {
+            color: #ccc;
+            font-size: 1rem;
+            transform: translateY(20px);
+            transition: transform 0.6s 0.1s;
+        }
+
+        .portfolio-item:hover .portfolio-description {
+            transform: translateY(0);
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.9), transparent);
+            border-top: 1px solid rgba(138, 3, 3, 0.1);
+            border-bottom: 1px solid rgba(138, 3, 3, 0.1);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: linear-gradient(145deg, rgba(25,25,25,0.9), rgba(15,15,15,0.9));
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(138, 3, 3, 0.2);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--theme-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(138, 3, 3, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-details h4 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .contact-details p {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            background: linear-gradient(145deg, rgba(25,25,25,0.9), rgba(15,15,15,0.9));
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(138, 3, 3, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(10, 10, 10, 0.8);
+            border: 2px solid rgba(138, 3, 3, 0.3);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--theme-color);
+            box-shadow: 0 0 20px rgba(138, 3, 3, 0.5);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            padding: 18px 40px;
+            background: var(--theme-color);
+            border: none;
+            border-radius: 30px;
+            color: #000;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .form-submit:hover {
+            background: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(138, 3, 3, 0.7);
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(to top, #050505, #0a0a0a);
+            padding: 100px 0 50px;
+            text-align: center;
+            border-top: 2px solid rgba(138, 3, 3, 0.2);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--theme-color), transparent);
+        }
+
+        .footer-logo {
+            font-size: 6rem;
+            color: var(--theme-color);
+            margin-bottom: 40px;
+            text-shadow: 0 0 40px var(--theme-color);
+            animation: footerLogo 4s ease-in-out infinite;
+        }
+
+        @keyframes footerLogo {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
+
+        .footer-text {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: #aaa;
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        .footer-quote {
+            font-size: 2rem;
+            color: var(--theme-color);
+            font-style: italic;
+            margin-bottom: 50px;
+            text-shadow: 0 0 20px rgba(138, 3, 3, 0.7);
+            position: relative;
+            padding: 30px;
+            border-left: 3px solid var(--theme-color);
+            border-right: 3px solid var(--theme-color);
+            background: rgba(0, 0, 0, 0.4);
+            max-width: 900px;
+            margin: 0 auto 50px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .social-link {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(20, 20, 20, 0.8);
+            border: 2px solid var(--theme-color);
+            color: var(--theme-color);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(138, 3, 3, 0.3), transparent);
+            transition: left 0.7s;
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        .social-link:hover {
+            transform: translateY(-10px) rotate(360deg);
+            background: var(--theme-color);
+            color: #000;
+            box-shadow: 0 0 30px var(--theme-color);
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 1rem;
+            padding-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* THEME VARIATIONS */
+        body.theme-matrix {
+            --theme-color: #00ff41;
+            --theme-accent: #008f11;
+            --theme-font: 'Orbitron', sans-serif;
+            --theme-font-alt: 'Orbitron', sans-serif;
+            --theme-bg-image: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80');
+            --theme-text-shadow: 0 0 15px rgba(0, 255, 65, 0.9);
+            --theme-box-shadow: 0 0 40px rgba(0, 255, 65, 0.5);
+        }
+
+        body.theme-cyber {
+            --theme-color: #ff00ff;
+            --theme-accent: #9900cc;
+            --theme-font: 'Rajdhani', sans-serif;
+            --theme-font-alt: 'Rajdhani', sans-serif;
+            --theme-bg-image: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            --theme-text-shadow: 0 0 15px rgba(255, 0, 255, 0.9);
+            --theme-box-shadow: 0 0 40px rgba(255, 0, 255, 0.5);
+        }
+
+        body.theme-noir {
+            --theme-color: #cccccc;
+            --theme-accent: #666666;
+            --theme-font: 'Rajdhani', sans-serif;
+            --theme-font-alt: 'Cinzel', serif;
+            --theme-bg-image: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1867&q=80');
+            --theme-text-shadow: 0 0 15px rgba(204, 204, 204, 0.9);
+            --theme-box-shadow: 0 0 40px rgba(204, 204, 204, 0.5);
+        }
+
+        body.theme-cinematic {
+            --theme-color: #f0c908;
+            --theme-accent: #b30000;
+            --theme-font: 'Rajdhani', sans-serif;
+            --theme-font-alt: 'Cinzel', serif;
+            --theme-bg-image: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1947&q=80');
+            --theme-text-shadow: 0 0 15px rgba(240, 201, 8, 0.9);
+            --theme-box-shadow: 0 0 40px rgba(240, 201, 8, 0.5);
+        }
+
+        body.theme-dark-tech {
+            --theme-color: #00a8ff;
+            --theme-accent: #0066cc;
+            --theme-font: 'Orbitron', sans-serif;
+            --theme-font-alt: 'Orbitron', sans-serif;
+            --theme-bg-image: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            --theme-text-shadow: 0 0 15px rgba(0, 168, 255, 0.9);
+            --theme-box-shadow: 0 0 40px rgba(0, 168, 255, 0.5);
+        }
+
+        /* MODAL */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s;
+            backdrop-filter: blur(20px);
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, rgba(20,20,20,0.95), rgba(10,10,10,0.95));
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            border: 3px solid var(--theme-color);
+            box-shadow: 0 0 60px var(--theme-color);
+            transform: scale(0.9);
+            transition: transform 0.5s;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(20, 20, 20, 0.8);
+            border: 2px solid var(--theme-color);
+            color: var(--theme-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: var(--theme-color);
+            color: #000;
+            transform: rotate(90deg);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1400px) {
+            .hero-title { font-size: 4.5rem; }
+            .hero-content { gap: 50px; }
+            .profile-image-placeholder { width: 400px; height: 500px; }
+        }
+
+        @media (max-width: 1200px) {
+            .theme-control-panel { right: 10px; }
+            .control-panel { left: 10px; }
+            .hero-title { font-size: 4rem; }
+            .section-title { font-size: 3.5rem; }
+            .contact-container { grid-template-columns: 1fr; gap: 50px; }
+        }
+
+        @media (max-width: 992px) {
+            .nav-links { display: none; }
+            .theme-control-panel { flex-direction: row; top: auto; bottom: 120px; right: 50%; transform: translateX(50%); }
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-description { border-left: none; padding-left: 0; border-top: 4px solid var(--theme-color); padding-top: 25px; }
+            .hero-image-container { order: -1; }
+            .profile-image-placeholder { width: 350px; height: 450px; margin: 0 auto; }
+            .hero-title { font-size: 3.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .hero-title { font-size: 3rem; }
+            .hero-subtitle { font-size: 2rem; }
+            .section-title { font-size: 2.8rem; }
+            .about-grid, .skills-grid { grid-template-columns: 1fr; }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            .theme-btn, .control-btn { width: 60px; height: 60px; font-size: 1.5rem; }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.8rem; }
+            .section-title { font-size: 2.2rem; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .profile-image-placeholder { width: 300px; height: 400px; }
+            .theme-control-panel { flex-wrap: wrap; justify-content: center; width: 90%; }
+            .control-panel { flex-wrap: wrap; justify-content: center; width: 90%; left: 5%; }
+        }
+    </style>
+</head>
+<body class="theme-default">
+    <!-- BACKGROUND ELEMENTS -->
+    <div class="theme-overlay"></div>
+    <div class="particles-container" id="particlesContainer"></div>
+    <div class="scan-line"></div>
+    <div class="code-matrix" id="codeMatrix"></div>
+
+    <!-- THEME CONTROL PANEL -->
+    <div class="theme-control-panel">
+        <button class="theme-btn active" data-theme="default">
+            <i class="fas fa-skull-crossbones"></i>
+            <span class="theme-label">Dark Legend</span>
+        </button>
+        <button class="theme-btn" data-theme="matrix">
+            <i class="fas fa-microchip"></i>
+            <span class="theme-label">The Matrix</span>
+        </button>
+        <button class="theme-btn" data-theme="cyber">
+            <i class="fas fa-robot"></i>
+            <span class="theme-label">Cyberpunk</span>
+        </button>
+        <button class="theme-btn" data-theme="noir">
+            <i class="fas fa-film"></i>
+            <span class="theme-label">Noir Vision</span>
+        </button>
+        <button class="theme-btn" data-theme="cinematic">
+            <i class="fas fa-camera"></i>
+            <span class="theme-label">Cinematic</span>
+        </button>
+        <button class="theme-btn" data-theme="dark-tech">
+            <i class="fas fa-laptop-code"></i>
+            <span class="theme-label">Dark Tech</span>
+        </button>
+    </div>
+
+    <!-- CONTROL PANEL -->
+    <div class="control-panel">
+        <button class="control-btn" id="musicToggle">
+            <i class="fas fa-volume-up"></i>
+            <span class="control-label">Cinematic Score</span>
+        </button>
+        <button class="control-btn" id="effectsToggle">
+            <i class="fas fa-magic"></i>
+            <span class="control-label">Visual Effects</span>
+        </button>
+        <button class="control-btn" id="immersiveToggle">
+            <i class="fas fa-vr-cardboard"></i>
+            <span class="control-label">Immersive Mode</span>
+        </button>
+        <button class="control-btn" id="infoModalBtn">
+            <i class="fas fa-info-circle"></i>
+            <span class="control-label">About Kakarot</span>
+        </button>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="nav-container">
+        <nav class="container">
+            <div class="nav-logo">
+                <div class="nav-logo-icon">
+                    <i class="fas fa-dragon"></i>
+                </div>
+                <div class="nav-logo-text">KAKAROT</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">The Legend</a></li>
+                <li><a href="#skills" class="nav-link">Mastery</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-indicator"></div>
+        </nav>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Sambhav Dhital</h1>
+                    <div class="hero-subtitle">Alias: KAKAROT</div>
+                    <p class="hero-description">
+                        I am a force that thrives in the shadows, where light fears to tread. I navigate the world with precision, creativity, and relentless determination, blending technology, storytelling, and cinematic aesthetics into everything I touch.
+                    </p>
+                    <div class="hero-quote">
+                        "My work is not merely seen—it is felt, echoing with intensity, darkness, and purpose."
+                    </div>
+                </div>
+                
+                <div class="hero-image-container">
+                    <div class="profile-image-placeholder">
+                        <div class="image-icon">
+                            <i class="fas fa-user-ninja"></i>
+                        </div>
+                        <div class="image-upload-text">
+                            Upload Your Cinematic Portrait
+                        </div>
+                        <label for="imageUpload" class="image-upload-btn">
+                            Choose Image
+                        </label>
+                        <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                        <img id="profileImage" alt="Sambhav Dhital - Kakarot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">The Legend of Kakarot</h2>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>The Visionary Mind</h3>
+                    <p>I am a visionary and dramatic thinker with cinematic style. My mind operates in the space between imagination and reality, transforming abstract concepts into tangible experiences. Every project begins as a vision in the shadows, then evolves into something that commands attention and leaves a lasting impact.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <h3>Creator of Dark Narratives</h3>
+                    <p>I create dark, evocative narratives and immersive storytelling experiences. My work spans creative writing, AI-generated designs, and cinematic presentations. Each creation carries my unique signature: a combination of discipline, artistry, and visionary ambition that transforms shadow into opportunity.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Tech Innovator</h3>
+                    <p>My expertise spans programming, AI design, and app concept development. I don't just follow technological trends—I push boundaries where others see walls. From coding innovations to AI-generated art, I merge technical precision with creative vision to build experiences that are both functional and unforgettable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Mastery & Disciplines</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="skill-title">Technical Mastery</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            Full-Stack Development
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            AI & Machine Learning
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            App Design & Development
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            Cybersecurity & Systems
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            Blockchain Technology
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="skill-title">Creative Arts</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            Cinematic Storytelling
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            Dark Narrative Writing
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            Visual Design & UI/UX
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            Digital Art & Animation
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            Concept Development
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3 class="skill-title">Personal Disciplines</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            Strategic Thinking
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            Leadership & Vision
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            Physical & Mental Fitness
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            Continuous Learning
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-chevron-right"></i>
+                            Creative Problem-Solving
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title">Cinematic Portfolio</h2>
+            
+            <div class="portfolio-filter">
+                <button class="portfolio-filter-btn active" data-filter="all">All Works</button>
+                <button class="portfolio-filter-btn" data-filter="tech">Tech Projects</button>
+                <button class="portfolio-filter-btn" data-filter="creative">Creative Works</button>
+                <button class="portfolio-filter-btn" data-filter="ai">AI Designs</button>
+                <button class="portfolio-filter-btn" data-filter="writing">Writing</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="tech">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Coding Project" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Nexus AI Platform</h3>
+                        <p class="portfolio-description">Advanced AI-driven development platform with neural network integration</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="creative">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Cyberpunk Art" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Cyberpunk Chronicles</h3>
+                        <p class="portfolio-description">Dark futuristic narrative series with immersive world-building</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="ai">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="AI Generated Art" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Shadow Realms AI</h3>
+                        <p class="portfolio-description">AI-generated dark fantasy art collection with thematic coherence</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="writing">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Writing Project" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Echoes in Darkness</h3>
+                        <p class="portfolio-description">Psychological thriller novel exploring themes of identity and power</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="tech">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Tech Innovation" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Quantum Codex</h3>
+                        <p class="portfolio-description">Revolutionary coding framework with quantum computing principles</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="creative">
+                    <img src="https://images.unsplash.com/photo-1537498425277-c283d32ef9db?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Cinematic Project" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Cinematic Universe</h3>
+                        <p class="portfolio-description">Cross-media storytelling platform with immersive cinematic elements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Connect With The Legend</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Full Name</h4>
+                            <p>Sambhav Dhital</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-mask"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Alias / Persona</h4>
+                            <p>Kakarot</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>sambhav@kakarot.dev</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Portfolio</h4>
+                            <p>www.kakarot-portfolio.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" class="form-input" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" class="form-input" placeholder="What is this regarding?" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" class="form-textarea" placeholder="Share your vision, project idea, or inquiry..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-submit">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fas fa-dragon"></i>
+            </div>
+            
+            <p class="footer-text">
+                I am Kakarot—a symbol of focus, intensity, and creative power. Where others see darkness, I see canvas; where others hesitate, I act. I exist between the line of imagination and reality, mastering both the shadows and the light I choose to embrace.
+            </p>
+            
+            <div class="footer-quote">
+                "In my world, nothing is ordinary. Everything is cinematic. Everything carries weight. Everything has meaning."
+            </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            
+            <p class="copyright">&copy; 2023 Sambhav "Kakarot" Dhital | Legendary Cinematic Portfolio | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- INFO MODAL -->
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="section-title">The Kakarot Philosophy</h2>
+            
+            <h3>About This Experience:</h3>
+            <p>This cinematic portfolio represents the essence of Kakarot—a fusion of darkness, creativity, and technological mastery. Every element has been crafted to reflect a legendary persona that thrives in shadows and creates with purpose.</p>
+            
+            <h3>Core Principles:</h3>
+            <ul>
+                <li><strong>Darkness as Canvas:</strong> Transforming shadow into creative opportunity</li>
+                <li><strong>Cinematic Precision:</strong> Every detail matters, every moment has weight</li>
+                <li><strong>Technological Artistry:</strong> Merging code with creativity</li>
+                <li><strong>Narrative Intensity:</strong> Stories that echo, designs that speak</li>
+                <li><strong>Relentless Vision:</strong> Pursuing excellence without compromise</li>
+            </ul>
+            
+            <h3>What Defines Kakarot:</h3>
+            <p>A visionary and dramatic thinker with cinematic style. Creator of dark, evocative narratives and immersive storytelling. Tech innovator specializing in programming, AI design, and app concepts. Disciplined and self-driven, striving for excellence in every project, every creation, every moment.</p>
+            
+            <div class="footer-quote" style="margin-top: 30px;">
+                "I am drawn to darkness not for fear, but for power. In the quiet of the night, ideas awaken, narratives ignite, and creativity takes flight."
+            </div>
+        </div>
+    </div>
+
+    <!-- AUDIO ELEMENTS -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-dark-ambient-1133.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="themeChangeSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-electronic-tech-mouse-click-1126.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="hoverSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // COMPLETE CINEMATIC PORTFOLIO JAVASCRIPT
+        document.addEventListener('DOMContentLoaded', function() {
+            // ========== GLOBAL STATE ==========
+            const state = {
+                currentTheme: 'default',
+                musicPlaying: false,
+                effectsEnabled: true,
+                immersiveMode: false,
+                profileImageSet: false
+            };
+
+            // ========== ELEMENT REFERENCES ==========
+            const body = document.body;
+            const themeOverlay = document.querySelector('.theme-overlay');
+            const particlesContainer = document.getElementById('particlesContainer');
+            const codeMatrix = document.getElementById('codeMatrix');
+            const scanLine = document.querySelector('.scan-line');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navIndicator = document.querySelector('.nav-indicator');
+            const musicToggle = document.getElementById('musicToggle');
+            const effectsToggle = document.getElementById('effectsToggle');
+            const immersiveToggle = document.getElementById('immersiveToggle');
+            const infoModalBtn = document.getElementById('infoModalBtn');
+            const modalClose = document.getElementById('modalClose');
+            const infoModal = document.getElementById('infoModal');
+            const imageUpload = document.getElementById('imageUpload');
+            const profileImage = document.getElementById('profileImage');
+            const portfolioFilterBtns = document.querySelectorAll('.portfolio-filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            const contactForm = document.getElementById('contactForm');
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            const themeChangeSound = document.getElementById('themeChangeSound');
+            const hoverSound = document.getElementById('hoverSound');
+
+            // ========== THEME SYSTEM ==========
+            const themes = {
+                default: {
+                    bg: "linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=1867&q=80')",
+                    matrix: false
+                },
+                matrix: {
+                    bg: "linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80')",
+                    matrix: true
+                },
+                cyber: {
+                    bg: "linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')",
+                    matrix: false
+                },
+                noir: {
+                    bg: "linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1867&q=80')",
+                    matrix: false
+                },
+                cinematic: {
+                    bg: "linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1947&q=80')",
+                    matrix: false
+                },
+                'dark-tech': {
+                    bg: "linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')",
+                    matrix: false
+                }
+            };
+
+            // ========== INITIALIZATION ==========
+            function init() {
+                createParticles();
+                createMatrixCode();
+                initNavigation();
+                initEventListeners();
+                initAudio();
+                setTheme('default');
+                startEffects();
+                
+                // Initial animation
+                setTimeout(() => {
+                    document.body.style.opacity = '1';
+                    document.body.style.transition = 'opacity 1.5s';
+                }, 500);
+            }
+
+            // ========== THEME MANAGEMENT ==========
+            function setTheme(themeName) {
+                // Update CSS variables
+                body.className = '';
+                body.classList.add(`theme-${themeName}`);
+                
+                // Update background
+                themeOverlay.style.background = themes[themeName].bg;
+                
+                // Update active button
+                document.querySelectorAll('.theme-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if(btn.dataset.theme === themeName) {
+                        btn.classList.add('active');
+                    }
+                });
+                
+                // Handle matrix effect
+                if(themes[themeName].matrix && state.effectsEnabled) {
+                    codeMatrix.style.opacity = '0.1';
+                } else {
+                    codeMatrix.style.opacity = '0';
+                }
+                
+                // Play sound
+                playSound(themeChangeSound);
+                
+                // Update state
+                state.currentTheme = themeName;
+                
+                // Update page title
+                updatePageTitle(themeName);
+            }
+
+            function updatePageTitle(themeName) {
+                const titles = {
+                    default: "KAKAROT | Sambhav Dhital | Dark Legend Portfolio",
+                    matrix: "KAKAROT | Sambhav Dhital | Matrix Vision",
+                    cyber: "KAKAROT | Sambhav Dhital | Cyberpunk Creator",
+                    noir: "KAKAROT | Sambhav Dhital | Noir Visionary",
+                    cinematic: "KAKAROT | Sambhav Dhital | Cinematic Master",
+                    'dark-tech': "KAKAROT | Sambhav Dhital | Dark Tech Innovator"
+                };
+                document.title = titles[themeName] || "KAKAROT | Legendary Portfolio";
+            }
+
+            // ========== VISUAL EFFECTS ==========
+            function createParticles() {
+                for(let i = 0; i < 50; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'kakarot-particle';
+                    particle.innerHTML = '';
+                    particle.style.left = `${Math.random() * 100}%`;
+                    particle.style.fontSize = `${10 + Math.random() * 30}px`;
+                    particle.style.animationDelay = `${Math.random() * 20}s`;
+                    particle.style.color = `rgba(138, 3, 3, ${0.05 + Math.random() * 0.1})`;
+                    particlesContainer.appendChild(particle);
+                }
+            }
+
+            function createMatrixCode() {
+                const chars = '01サムバブカカロットKAKAROTコードマトリックス';
+                
+                for(let i = 0; i < 100; i++) {
+                    const char = document.createElement('div');
+                    char.className = 'matrix-char';
+                    char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                    char.style.left = `${Math.random() * 100}%`;
+                    char.style.animationDelay = `${Math.random() * 2}s`;
+                    char.style.animationDuration = `${3 + Math.random() * 5}s`;
+                    char.style.fontSize = `${12 + Math.random() * 10}px`;
+                    char.style.color = `rgba(0, 255, 65, ${0.3 + Math.random() * 0.7})`;
+                    codeMatrix.appendChild(char);
+                }
+            }
+
+            function startEffects() {
+                if(state.effectsEnabled) {
+                    scanLine.style.display = 'block';
+                    particlesContainer.style.display = 'block';
+                } else {
+                    scanLine.style.display = 'none';
+                    particlesContainer.style.display = 'none';
+                }
+            }
+
+            // ========== IMAGE UPLOAD ==========
+            function initImageUpload() {
+                imageUpload.addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if(file) {
+                        const reader = new FileReader();
+                        
+                        reader.onload = function(event) {
+                            profileImage.src = event.target.result;
+                            profileImage.style.display = 'block';
+                            document.querySelector('.image-icon').style.display = 'none';
+                            document.querySelector('.image-upload-text').style.display = 'none';
+                            document.querySelector('.image-upload-btn').style.display = 'none';
+                            state.profileImageSet = true;
+                            
+                            // Add image loaded animation
+                            profileImage.style.opacity = '0';
+                            profileImage.style.transform = 'scale(0.9)';
+                            setTimeout(() => {
+                                profileImage.style.transition = 'opacity 0.8s, transform 0.8s';
+                                profileImage.style.opacity = '1';
+                                profileImage.style.transform = 'scale(1)';
+                            }, 10);
+                        };
+                        
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+
+            // ========== PORTFOLIO FILTER ==========
+            function initPortfolioFilter() {
+                portfolioFilterBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const filter = this.dataset.filter;
+                        
+                        // Update active button
+                        portfolioFilterBtns.forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Filter items
+                        portfolioItems.forEach(item => {
+                            if(filter === 'all' || item.dataset.category === filter) {
+                                item.style.display = 'block';
+                                setTimeout(() => {
+                                    item.style.opacity = '1';
+                                    item.style.transform = 'scale(1)';
+                                }, 10);
+                            } else {
+                                item.style.opacity = '0';
+                                item.style.transform = 'scale(0.8)';
+                                setTimeout(() => {
+                                    item.style.display = 'none';
+                                }, 300);
+                            }
+                        });
+                        
+                        // Play sound
+                        playSound(hoverSound);
+                    });
+                });
+            }
+
+            // ========== NAVIGATION ==========
+            function initNavigation() {
+                // Update indicator position
+                function updateIndicator() {
+                    const activeLink = document.querySelector('.nav-link.active');
+                    if(activeLink) {
+                        const { offsetLeft, offsetWidth } = activeLink;
+                        navIndicator.style.left = `${offsetLeft}px`;
+                        navIndicator.style.width = `${offsetWidth}px`;
+                    }
+                }
+                
+                // Smooth scrolling
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetSection = document.querySelector(targetId);
+                        
+                        if(targetSection) {
+                            // Update active link
+                            navLinks.forEach(l => l.classList.remove('active'));
+                            this.classList.add('active');
+                            updateIndicator();
+                            
+                            // Scroll to section
+                            window.scrollTo({
+                                top: targetSection.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Play sound
+                            playSound(hoverSound);
+                        }
+                    });
+                });
+                
+                // Update on scroll
+                window.addEventListener('scroll', function() {
+                    let current = '';
+                    const sections = document.querySelectorAll('section');
+                    
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight;
+                        if(pageYOffset >= (sectionTop - 200)) {
+                            current = section.getAttribute('id');
+                        }
+                    });
+                    
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if(link.getAttribute('href') === `#${current}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                    
+                    updateIndicator();
+                });
+                
+                // Initial update
+                setTimeout(updateIndicator, 100);
+            }
+
+            // ========== FORM HANDLING ==========
+            function initForm() {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Create submission effect
+                    const submitBtn = this.querySelector('.form-submit');
+                    const originalText = submitBtn.textContent;
+                    
+                    submitBtn.textContent = 'MESSAGE SENT TO SHADOWS';
+                    submitBtn.style.background = '#00ff41';
+                    submitBtn.style.color = '#000';
+                    
+                    // Play sound
+                    playSound(themeChangeSound);
+                    
+                    // Reset form
+                    setTimeout(() => {
+                        contactForm.reset();
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.style.color = '';
+                        
+                        // Show success message
+                        const successMsg = document.createElement('div');
+                        successMsg.style.position = 'fixed';
+                        successMsg.style.top = '50%';
+                        successMsg.style.left = '50%';
+                        successMsg.style.transform = 'translate(-50%, -50%)';
+                        successMsg.style.background = 'rgba(0,0,0,0.9)';
+                        successMsg.style.color = 'var(--theme-color)';
+                        successMsg.style.padding = '30px 50px';
+                        successMsg.style.borderRadius = '15px';
+                        successMsg.style.border = '2px solid var(--theme-color)';
+                        successMsg.style.zIndex = '9999';
+                        successMsg.style.textAlign = 'center';
+                        successMsg.style.fontSize = '1.5rem';
+                        successMsg.style.fontWeight = 'bold';
+                        successMsg.innerHTML = `
+                            <i class="fas fa-check-circle" style="font-size: 3rem; margin-bottom: 15px; display: block;"></i>
+                            Message Received<br>
+                            <span style="font-size: 1rem; color: #aaa;">The shadows have heard your call</span>
+                        `;
+                        
+                        document.body.appendChild(successMsg);
+                        
+                        setTimeout(() => {
+                            successMsg.style.opacity = '0';
+                            successMsg.style.transition = 'opacity 0.5s';
+                            setTimeout(() => {
+                                document.body.removeChild(successMsg);
+                            }, 500);
+                        }, 3000);
+                    }, 2000);
+                });
+            }
+
+            // ========== AUDIO MANAGEMENT ==========
+            function initAudio() {
+                backgroundMusic.volume = 0.4;
+                themeChangeSound.volume = 0.3;
+                hoverSound.volume = 0.2;
+                
+                // Try to auto-play music
+                document.addEventListener('click', function initAudioOnClick() {
+                    if(!state.musicPlaying) {
+                        backgroundMusic.play().then(() => {
+                            state.musicPlaying = true;
+                            musicToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
+                        }).catch(console.log);
+                        document.removeEventListener('click', initAudioOnClick);
+                    }
+                }, { once: true });
+            }
+
+            function playSound(audioElement) {
+                if(!state.effectsEnabled) return;
+                
+                audioElement.currentTime = 0;
+                audioElement.play().catch(console.log);
+            }
+
+            // ========== EVENT LISTENERS ==========
+            function initEventListeners() {
+                // Theme buttons
+                document.querySelectorAll('.theme-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        setTheme(this.dataset.theme);
+                    });
+                });
+
+                // Control buttons
+                musicToggle.addEventListener('click', function() {
+                    if(state.musicPlaying) {
+                        backgroundMusic.pause();
+                        this.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                    } else {
+                        backgroundMusic.play();
+                        this.innerHTML = '<i class="fas fa-volume-up"></i>';
+                    }
+                    state.musicPlaying = !state.musicPlaying;
+                    playSound(hoverSound);
+                });
+
+                effectsToggle.addEventListener('click', function() {
+                    state.effectsEnabled = !state.effectsEnabled;
+                    this.innerHTML = state.effectsEnabled ? 
+                        '<i class="fas fa-magic"></i>' : 
+                        '<i class="fas fa-ban"></i>';
+                    startEffects();
+                    playSound(hoverSound);
+                });
+
+                immersiveToggle.addEventListener('click', function() {
+                    state.immersiveMode = !state.immersiveMode;
+                    if(state.immersiveMode) {
+                        document.documentElement.requestFullscreen();
+                        this.innerHTML = '<i class="fas fa-compress"></i>';
+                    } else {
+                        document.exitFullscreen();
+                        this.innerHTML = '<i class="fas fa-expand"></i>';
+                    }
+                    playSound(hoverSound);
+                });
+
+                // Modal
+                infoModalBtn.addEventListener('click', function() {
+                    infoModal.classList.add('active');
+                    playSound(hoverSound);
+                });
+
+                modalClose.addEventListener('click', function() {
+                    infoModal.classList.remove('active');
+                    playSound(hoverSound);
+                });
+
+                infoModal.addEventListener('click', function(e) {
+                    if(e.target === this) {
+                        this.classList.remove('active');
+                        playSound(hoverSound);
+                    }
+                });
+
+                // Initialize additional features
+                initImageUpload();
+                initPortfolioFilter();
+                initForm();
+
+                // Keyboard shortcuts
+                document.addEventListener('keydown', function(e) {
+                    switch(e.code) {
+                        case 'Space':
+                            e.preventDefault();
+                            musicToggle.click();
+                            break;
+                        case 'Digit1':
+                        case 'Digit2':
+                        case 'Digit3':
+                        case 'Digit4':
+                        case 'Digit5':
+                        case 'Digit6':
+                            const index = parseInt(e.code[5]) - 1;
+                            const themeButtons = document.querySelectorAll('.theme-btn');
+                            if(index < themeButtons.length) {
+                                themeButtons[index].click();
+                            }
+                            break;
+                        case 'Escape':
+                            if(infoModal.classList.contains('active')) {
+                                infoModal.classList.remove('active');
+                            }
+                            if(document.fullscreenElement) {
+                                document.exitFullscreen();
+                                state.immersiveMode = false;
+                                immersiveToggle.innerHTML = '<i class="fas fa-expand"></i>';
+                            }
+                            break;
+                    }
+                });
+
+                // Hover sounds
+                document.querySelectorAll('.theme-btn, .control-btn, .nav-link, .portfolio-filter-btn, .portfolio-item, .social-link, .image-upload-btn').forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        if(state.effectsEnabled) {
+                            hoverSound.currentTime = 0;
+                            hoverSound.play().catch(console.log);
+                        }
+                    });
+                });
+
+                // Scroll animations
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -100px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if(entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+
+                // Observe elements for animation
+                document.querySelectorAll('.about-card, .skill-category, .portfolio-item, .contact-info, .contact-form').forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(50px)';
+                    el.style.transition = 'opacity 0.8s, transform 0.8s';
+                    observer.observe(el);
+                });
+
+                // Parallax effect
+                window.addEventListener('scroll', function() {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * -0.5;
+                    document.querySelector('.hero-section').style.transform = `translate3d(0px, ${rate}px, 0px)`;
+                    
+                    // Hide/show nav
+                    const nav = document.querySelector('.nav-container');
+                    if(scrolled > 100) {
+                        nav.style.background = 'rgba(10,10,10,0.95)';
+                    } else {
+                        nav.style.background = 'linear-gradient(to bottom, rgba(10,10,10,0.95), rgba(10,10,10,0.8))';
+                    }
+                });
+
+                // Fullscreen change
+                document.addEventListener('fullscreenchange', function() {
+                    state.immersiveMode = !!document.fullscreenElement;
+                    immersiveToggle.innerHTML = state.immersiveMode ? 
+                        '<i class="fas fa-compress"></i>' : 
+                        '<i class="fas fa-expand"></i>';
+                });
+            }
+
+            // ========== START APPLICATION ==========
+            init();
+        });
+    </script>
+</body>
+</html>
