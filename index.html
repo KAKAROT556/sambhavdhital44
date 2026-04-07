@@ -1,372 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'm Sorry Kanxu 💙</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            height: 100vh;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            color: white;
-        }
-
-        .container {
-            text-align: center;
-            animation: fadeIn 2s ease-in-out;
-            z-index: 10;
-            padding: 2rem;
-            background: rgba(10, 25, 35, 0.3);
-            backdrop-filter: blur(5px);
-            border-radius: 60px;
-            border: 1px solid rgba(255,255,255,0.15);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 80px #00c6ff33;
-            max-width: 800px;
-            margin: 1rem;
-        }
-
-        h1 {
-            font-size: 60px;
-            letter-spacing: 3px;
-            animation: glow 2s infinite alternate;
-            line-height: 1.2;
-        }
-
-        h2 {
-            margin-top: 20px;
-            font-weight: 300;
-            font-size: 28px;
-            opacity: 0;
-            animation: slideUp 2s ease forwards;
-            animation-delay: 1.5s;
-            background: linear-gradient(to right, #e0f2fe, #bae6fd);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 20px #38bdf8;
-        }
-
-        .button-wrapper {
-            margin-top: 40px;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        button {
-            padding: 14px 32px;
-            border: none;
-            border-radius: 50px;
-            background: white;
-            color: #2c5364;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.3);
-            letter-spacing: 1px;
-        }
-
-        button:hover {
-            background: #ff4b5c;
-            color: white;
-            transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 20px 30px #ff4b5c80;
-        }
-
-        #forgivenessMessage {
-            margin-top: 30px;
-            animation: slideUp 1.5s ease forwards;
-            background: rgba(255, 255, 255, 0.08);
-            padding: 25px 20px;
-            border-radius: 80px 80px 80px 20px;
-            backdrop-filter: blur(12px);
-            border: 2px solid #ff4b5c66;
-            box-shadow: 0 0 50px #00c6ff66;
-            transition: all 0.3s;
-        }
-
-        .message-content p {
-            font-size: 24px;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-
-        .message-content p:first-child {
-            color: #ffb3c6;
-            text-shadow: 0 0 20px #ff4b5c;
-        }
-
-        .message-content p:nth-child(2) {
-            font-size: 28px;
-            font-weight: 700;
-            background: linear-gradient(145deg, #a5f3fc, #fbcfe8);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .big-emoji {
-            font-size: 60px;
-            line-height: 1;
-            filter: drop-shadow(0 0 20px #ffb3c6);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%,100%{ transform: translateY(0); }
-            50%{ transform: translateY(-12px); }
-        }
-
-        /* Glow animation */
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px #fff, 0 0 20px #00c6ff, 0 0 30px #0072ff;
-            }
-            to {
-                text-shadow: 0 0 20px #fff, 0 0 40px #ff4b5c, 0 0 60px #ff4b5c;
-            }
-        }
-
-        /* Fade in */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Slide up */
-        @keyframes slideUp {
-            from {
-                transform: translateY(40px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Floating hearts (improved) */
-        .heart {
-            position: absolute;
-            width: 22px;
-            height: 22px;
-            background: #ff4b5c;
-            transform: rotate(45deg);
-            animation: float 6s linear infinite;
-            opacity: 0.8;
-            filter: drop-shadow(0 0 10px #ff8da1);
-            z-index: 1;
-        }
-
-        .heart::before,
-        .heart::after {
-            content: "";
-            position: absolute;
-            width: 22px;
-            height: 22px;
-            background: #ff4b5c;
-            border-radius: 50%;
-        }
-
-        .heart::before {
-            top: -11px;
-            left: 0;
-        }
-
-        .heart::after {
-            left: -11px;
-            top: 0;
-        }
-
-        /* Alternate blue hearts for variety */
-        .heart.blue {
-            background: #00c6ff;
-        }
-        .heart.blue::before,
-        .heart.blue::after {
-            background: #00c6ff;
-        }
-
-        @keyframes float {
-            0% {
-                bottom: -10px;
-                opacity: 0.9;
-                transform: rotate(45deg) scale(1);
-            }
-            100% {
-                bottom: 110%;
-                opacity: 0;
-                transform: rotate(135deg) scale(0.6);
-            }
-        }
-
-        /* tiny sparkling dots (extra emotion) */
-        .sparkle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: white;
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: sparkleFloat 8s linear infinite;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        @keyframes sparkleFloat {
-            0% { bottom: -10px; opacity: 0.2; }
-            50% { opacity: 0.8; }
-            100% { bottom: 100%; opacity: 0; }
-        }
-
-        /* responsiveness */
-        @media (max-width: 550px) {
-            h1 { font-size: 40px; }
-            h2 { font-size: 22px; }
-            button { padding: 12px 20px; font-size: 16px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sambidhan the Boka</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+    }
+    header {
+      background: #1e293b;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin: 10px 0;
+    }
+    .hero {
+      padding: 60px 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #cbd5f5;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #38bdf8;
+      color: black;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .section {
+      padding: 40px 20px;
+    }
+    .card {
+      background: #1e293b;
+      margin: 15px auto;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 500px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    #secret {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);} 
+      to {opacity: 1; transform: translateY(0);} 
+    }
+    footer {
+      background: #020617;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container" id="mainContainer">
-        <h1>I'm Sorry Kanxu 💙</h1>
-        <h2>You mean more to me than my ego ever will...</h2>
+<header>
+  <h1>🐐 Sambidhan the Legendary Boka</h1>
+  <p>Certified confusion machine since birth 😭</p>
+</header>
 
-        <div class="button-wrapper">
-            <button onclick="showMessage()">Click if you still care 🥺</button>
-            <button onclick="showHugMessage()" style="background: #ffb3c6; color:#1e3a4a;">Send a warm hug 🤗</button>
-        </div>
+<section class="hero">
+  <h1>Meet Sambidhan 😌</h1>
+  <p>Confidence level 💯… logic loading… please wait ⏳</p>
+  <button class="btn" onclick="showSecret()">Reveal His Secrets 💀</button>
+</section>
 
-        <!-- Dynamic heartfelt message appears here -->
-        <div id="forgivenessMessage" style="display: none;"></div>
-    </div>
+<section id="facts" class="section">
+  <h2>Top Sambidhan Moments</h2>
 
-    <script>
-        // ----- Show the main apology message (forgive button) -----
-        function showMessage() {
-            const msgDiv = document.getElementById("forgivenessMessage");
-            msgDiv.style.display = "block";
-            msgDiv.innerHTML = `
-                <div class="message-content">
-                    <p>🥺 I promise to do better. Please forgive me ❤️</p>
-                    <p>You're irreplaceable, Kanxu</p>
-                    <div class="big-emoji">💙🫂✨</div>
-                </div>
-            `;
-            // Add a little playful confetti of hearts (simulated via extra hearts)
-            for (let i = 0; i < 8; i++) {
-                setTimeout(() => createHeart(true), i * 100); // burst of hearts
-            }
-        }
+  <div class="card">
+    <h3>📱 Texting King</h3>
+    <p>Replies "coming in 5 min"… arrives next day.</p>
+  </div>
 
-        // ----- Show the hug message (second button) -----
-        function showHugMessage() {
-            const msgDiv = document.getElementById("forgivenessMessage");
-            msgDiv.style.display = "block";
-            msgDiv.innerHTML = `
-                <div class="message-content">
-                    <p>🤗 *warm hug received* 🤗</p>
-                    <p>Kanxu, I cherish you 🌸</p>
-                    <div class="big-emoji">💫🫂💖</div>
-                </div>
-            `;
-            // Blue and red hearts for hug
-            for (let i = 0; i < 8; i++) {
-                setTimeout(() => createHeart(i % 2 === 0), i * 120);
-            }
-        }
+  <div class="card">
+    <h3>🧠 Genius Mode</h3>
+    <p>Argues confidently even when 100% wrong… and somehow wins.</p>
+  </div>
 
-        // ----- Floating hearts (improved with color option) -----
-        function createHeart(isBlue = false) {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            if (isBlue) heart.classList.add("blue");
+  <div class="card">
+    <h3>🍔 Food Radar</h3>
+    <p>Can smell momo from another dimension.</p>
+  </div>
 
-            // Random horizontal position
-            heart.style.left = Math.random() * window.innerWidth + "px";
-            // Random size variation (70% to 130%)
-            let scale = 0.7 + Math.random() * 0.8;
-            heart.style.transform = `rotate(45deg) scale(${scale})`;
-            // Random duration between 3.5s and 8s
-            heart.style.animationDuration = (Math.random() * 4.5 + 3.5) + "s";
+  <div class="card">
+    <h3>😂 Clown Energy</h3>
+    <p>Does something dumb → laughs first → makes it look intentional.</p>
+  </div>
 
-            document.body.appendChild(heart);
+</section>
 
-            setTimeout(() => {
-                heart.remove();
-            }, 8000);
-        }
+<section id="secret" class="section">
+  <h2>🚨 Hidden Truth About Sambidhan 🚨</h2>
 
-        // ----- create sparkles (tiny dots) for extra dreamy effect -----
-        function createSparkle() {
-            const sparkle = document.createElement("div");
-            sparkle.classList.add("sparkle");
-            sparkle.style.left = Math.random() * window.innerWidth + "px";
-            sparkle.style.animationDuration = (Math.random() * 5 + 4) + "s";
-            sparkle.style.background = Math.random() > 0.5 ? "#ffdddd" : "#cceeff";
-            sparkle.style.width = (Math.random() * 6 + 2) + "px";
-            sparkle.style.height = sparkle.style.width;
-            document.body.appendChild(sparkle);
+  <div class="card">
+    <p>He once opened calculator… to calculate 1+1 💀</p>
+  </div>
 
-            setTimeout(() => {
-                sparkle.remove();
-            }, 9000);
-        }
+  <div class="card">
+    <p>Google searches him for answers… not the other way around 😭</p>
+  </div>
 
-        // ----- initialize both effects: hearts & sparkles (run forever) -----
-        setInterval(() => {
-            createHeart(Math.random() > 0.5);  // mix of red and blue
-        }, 400);
+  <div class="card">
+    <p>His brain runs on "trust me bro" energy ⚡</p>
+  </div>
 
-        setInterval(() => {
-            createSparkle();
-        }, 300);
+</section>
 
-        // Also trigger a few hearts on page load to make it alive
-        window.addEventListener('load', () => {
-            for (let i = 0; i < 10; i++) {
-                setTimeout(() => createHeart(i % 2 === 0), i * 150);
-            }
-        });
+<section class="section">
+  <h2>Why We Keep Him Around ❤️</h2>
+  <div class="card">
+    <p>Because without Sambidhan… who would entertain us for free? 😂</p>
+  </div>
+</section>
 
-        // Extra: if the user clicks anywhere on container, slight reaction (playful)
-        document.getElementById("mainContainer").addEventListener("click", function(e) {
-            if (e.target.tagName !== 'BUTTON') {  // avoid double from buttons
-                for (let i=0; i<4; i++) {
-                    setTimeout(() => createHeart(true), i*70);
-                }
-            }
-        });
+<footer>
+  <p>Made with 💀 for Sambidhan the Boka</p>
+</footer>
 
-        // also make message disappear if user clicks again? no — but we can add a close 'x'? but simple enough.
-        // But we can allow message to stay. It's fine.
+<script>
+function showSecret() {
+  document.getElementById('secret').style.display = 'block';
+  window.location.href = '#secret';
+}
+</script>
 
-        // add dynamic style for message when it appears
-        const style = document.createElement('style');
-        style.innerHTML = `
-            #forgivenessMessage {
-                transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            }
-            .container:hover {
-                box-shadow: 0 20px 60px #00c6ff66;
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
 </body>
 </html>
